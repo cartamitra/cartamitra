@@ -1,0 +1,4 @@
+mdw_demo:
+    resource: "@MDWDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+	<header>
+		<hgroup>
+			<h1>El blog de mlw.io</h1>
+			<h2>Este es el blog de Mejorando la web</h2>
+		</hgroup>
+	</header>
+	<nav>
+		Aquí va la botonera de navegación
+	</nav>
+	<section>
+		<article>Aquí va un post, con su titulo en h2</article>
+		<article>Aquí va un post, con su titulo en h2</article>
+		<article>Aquí va un post, con su titulo en h2</article>
+	</section>
+	<aside>
+		Barra lateral con cosas que nadie lee, como cuentas de twitter,
+		facebook, posts viejos, etc.
+	</aside>
+	<footer>
+		Pie de pagina, amenazas de copyright, etc.
+	</footer>
+	{% endblock %}

@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>PrecioTotal list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipoprecio</th>
+                <th>Platoid</th>
+                <th>Precio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('preciototal_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.tipoPrecio }}</td>
+                <td>{{ entity.platoId }}</td>
+                <td>{{ entity.precio }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('preciototal_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('preciototal_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('preciototal_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

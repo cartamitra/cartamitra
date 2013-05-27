@@ -1,0 +1,19 @@
+mdw_carta_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: MDWCartaBundle:Default:index }
+
+plato_crear:
+    pattern: /plato/crear
+    defaults: { _controller: MDWCartaBundle:plato:crear }
+
+plato_listar:
+    pattern: /plato/listar
+    defaults: { _controller: MDWCartaBundle:plato:listar }
+
+plato_borrar:
+    pattern: /plato/borrar
+    defaults: { _controller: MDWCartaBundle:plato:borrar }
+
+plato_editar:
+    pattern: /plato/editar
+    defaults: { _controller: MDWCartaBundle:plato:editar }

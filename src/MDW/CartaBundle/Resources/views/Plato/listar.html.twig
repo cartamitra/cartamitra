@@ -1,0 +1,18 @@
+<h1>Listado de Paltos</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+    </tr>
+    {% for platos in platos %}
+    <tr>
+        <td>{{ platos.id }}</td>
+        <td>{{ platos.nombre }}</td>
+        <td>{{ platos.tipo }}</td>
+        <td>{{ platos.precio }}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
