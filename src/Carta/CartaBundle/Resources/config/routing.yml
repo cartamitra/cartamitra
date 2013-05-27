@@ -26,6 +26,10 @@ cliente:
     resource: "@CartaCartaBundle/Controller/ClienteController.php"
     type:     annotation
 
-index:
-    pattern:  /
+principal:
+    pattern: /
     defaults: { _controller: CartaCartaBundle:Default:index }
+
+pagina_menu:
+    pattern: /menu
+    defaults: { _controller: CartaCartaBundle:Default:paginamenu }
