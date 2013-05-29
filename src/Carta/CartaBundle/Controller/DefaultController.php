@@ -22,4 +22,8 @@ class DefaultController extends Controller
     public function platosAction() {
          return $this->render('CartaCartaBundle:Default:platos.html.twig');
     }
+    
+    public function presentacionAction() {
+         return $this->render('CartaCartaBundle:Default:presentacion.html.twig');
+    }
 }

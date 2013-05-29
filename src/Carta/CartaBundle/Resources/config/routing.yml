@@ -33,3 +33,7 @@ principal:
 platos:
   pattern: /platos
   defaults: { _controller: CartaCartaBundle:Default:platos }
+
+presentacion:
+  pattern: /presentacion
+  defaults: { _controller: CartaCartaBundle:Default:presentacion }

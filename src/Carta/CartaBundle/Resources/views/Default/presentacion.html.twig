@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/stylemio1.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block body -%}
+<div id="fixedtop" class="clearfix">
+	<div id="headercont" class="clearfix">
+    	<div id="headerleft">
+        	<a title="" href="#"><img alt="" src="{{ asset('images/logo-example.jpg') }}" /></a>
+        </div>
+    	<div id="headerright">
+            <div class="menu">
+                <ul>
+                   <li class="active"><a title="" href="{{ path('principal')}}">Inicio</a></li>
+                    <li><a title="" href="{{ path('platos')}}">Menu</a></li>
+                    <li><a title="" href="">Comanda</a></li>
+                    <li><a title="" href="">Pedir</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="maincont" class="clearfix">
+				<div class="center">
+					<strong class="subHeading">FILETE DE POLLO A LA PLANCHA CON PICADA VERDE</strong>
+					<div class="columns">
+						<div class="halfa">
+							<div class="imgHolder alignLeft"><img src="{{ asset('images/portfolio-1t.jpg') }}" alt="image" /></div>
+						</div>
+						<div class="half"><h3>FILETE DE POLLO A LA PLANCHA CON PICADA VERDE
+						  </h3>
+						  	<div class="halftext">
+						  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+    <div id="footercont" class="clearfix">
+        <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>
+    </div>
+</div>
+
+{%endblock%}
+    
