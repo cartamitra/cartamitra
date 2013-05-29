@@ -1,7 +1,3 @@
-principal:
-    resource: "@CartaCartaBundle/Controller/DefaultController.php"
-    type:     annotation
-
 tipo:
     resource: "@CartaCartaBundle/Controller/TipoController.php"
     type:     annotation
@@ -29,3 +25,11 @@ comandas:
 cliente:
     resource: "@CartaCartaBundle/Controller/ClienteController.php"
     type:     annotation
+    
+principal:
+    pattern: /principal
+    defaults: { _controller: CartaCartaBundle:Default:index }
+    
+platos:
+  pattern: /platos
+  defaults: { _controller: CartaCartaBundle:Default:platos }
