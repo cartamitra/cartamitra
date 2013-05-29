@@ -2,20 +2,28 @@
 
 namespace Carta\CartaBundle\Controller;
 
-
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
 
 
 class DefaultController extends Controller
 {
+    
+   /**
+     * Pagina Principal
+     *
+     * @Route("/", name="pagina")
+     * @Method("GET")
+     * @Template("CartaCartaBundle:Default:menu.html.twig")
+     */
+    
+    
     public function indexAction()
     {
-        return $this->render('CartaCartaBundle:Default:index.html.twig');
-    }
-    
-     public function paginamenuAction()
-    {
-        return $this->render('CartaCartaBundle:Default:menu.html.twig');
+        return array();
     }
 }

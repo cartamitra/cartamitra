@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/stylemio.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block body -%}
+
+<div id="fixedtop" class="clearfix">
+	<div id="headercont" class="clearfix">
+    	<div id="headerleft">
+        	<a title="" href="#"><img alt="" src="{{ asset('images/logo-example.jpg') }}" /><!--</a><h1>HOTEL MITRA</h1>-->
+        </div>
+       	<div id="headerright">
+            <div class="menu">
+                <ul>
+                    <li class="active"><a title="" href="#">Inicio</a></li>
+                    <li><a title="" href="#">Comanda</a></li>
+                    <li><a title="" href="#">Menu</a></li>
+                    <li><a title="" href="#">Pedir</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="maincont" class="clearfix">
+    <div id="main">
+    	<h1>Carta Hotel Mitra</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac ornare sapien. Suspendisse suscipit molestie enim non egestas. Proin ac dictum enim. Nunc et diam in orci cursus tincidunt. Pellentesque elementum tortor arcu, id faucibus nisi. In non tellus ultricies leo eleifend placerat. Proin tincidunt mattis consequat.</p>
+    	<hr />
+
+        <div id="portfoliocont" class="clearfix">
+        	<ul>
+            	<li><a title="" href=""><img alt="" src="{{ asset('images/lista/image05.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image14.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image03.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image04.jpg') }}" /><div class="overlay link"></div></a></li>
+            	<li><a title="" href=""><img alt="" src="{{ asset('images/lista/image05.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image06.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image07.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image08.jpg') }}" /><div class="overlay link"></div></a></li>
+            	<li><a title="" href=""><img alt="" src="{{ asset('images/lista/image04.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image01.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image10.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href=""><img alt="" src="{{ asset('images/lista/image11.jpg') }}" /><div class="overlay link"></div></a></li>
+            </ul>
+        </div>
+        <hr />
+    </div>
+    <div id="footercont" class="clearfix">
+        <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>
+    </div>
+</div>
+	{% endblock %}
