@@ -31,15 +31,16 @@
     	<hr />
 
         <div id="portfoliocont" class="clearfix">
-        	<ul>
-            	<li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image05.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image01.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image06.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image11.jpg') }}" /><div class="overlay link"></div></a></li>
-            	<li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image07.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image12.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image08.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image09.jpg') }}" /><div class="overlay link"></div></a></li>
+            <ul>
+                {% for entity in entities %}
+                    {% set foo = 'images/lista/image0' ~ '.jpg' %}
+                    <li><a title="" href="{{ path('platos', { 'id': entity.id })}}">
+                            <img alt="{{ entity.tipo }}" src="{{ asset('images/lista/image02.jpg') }}" />
+                            
+                            <div class="overlay link"></div>
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
         <hr />
@@ -48,6 +49,20 @@
         <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>
     </div>
 </div>
+    
+        {#
+            Codigo que habia en el lugar del for
+            <ul>
+            	<li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image01.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image02.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image03.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image04.jpg') }}" /><div class="overlay link"></div></a></li>
+            	<li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image05.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image06.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image08.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image09.jpg') }}" /><div class="overlay link"></div></a></li>
+            </ul>
+        #}
 
 {%endblock%}
     
