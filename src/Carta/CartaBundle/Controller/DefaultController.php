@@ -16,7 +16,15 @@ class DefaultController extends Controller
     
     public function indexAction()
     {
-         return $this->render('CartaCartaBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('CartaCartaBundle:Tipo')->findAll();
+
+        
+         return $this->render(
+                 'CartaCartaBundle:Default:index.html.twig', 
+                 array('entities' => $entities) 
+         );
     }
     
     public function platosAction() {

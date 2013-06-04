@@ -31,8 +31,8 @@ principal:
     defaults: { _controller: CartaCartaBundle:Default:index }
     
 platos:
-  pattern: /platos
-  defaults: { _controller: CartaCartaBundle:Default:platos }
+  pattern: /platos/{id}
+  defaults: { _controller: CartaCartaBundle:Default:platos, id: 1 }
 
 presentacion:
   pattern: /presentacion
