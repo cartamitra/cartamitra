@@ -28,25 +28,34 @@
     <div id="main">
     	<h1>Carta Hotel Mitra</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac ornare sapien. Suspendisse suscipit molestie enim non egestas. Proin ac dictum enim. Nunc et diam in orci cursus tincidunt. Pellentesque elementum tortor arcu, id faucibus nisi. In non tellus ultricies leo eleifend placerat. Proin tincidunt mattis consequat.</p>
-    	<hr />
-
+        <hr/>
         <div id="portfoliocont" class="clearfix">
-        	<ul>
+            <ul>
+            {% for entity in entities %}
+            
+                <li><a title="" href="{{ path('presentacion', { 'id': entity.id })}}">
+                        <img alt="{{entity.Nombre}}" src="{{ asset('images/lista/image02.jpg') }}" />
+                        <div class="overlay link"></div>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+            {#<ul>
             	<li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image05.jpg') }}" /><div class="overlay link"></div></a></li>
                 <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image14.jpg') }}" /><div class="overlay link"></div></a></li>
                 <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image03.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image04.jpg') }}" /><div class="overlay link"></div></a></li>
-            	<li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image05.jpg') }}" /><div class="overlay link"></div></a></li>
+                <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image02.jpg') }}" /><div class="overlay link"></div></a></li>
+            	<li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image02.jpg') }}" /><div class="overlay link"></div></a></li>
                 <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image06.jpg') }}" /><div class="overlay link"></div></a></li>
                 <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image07.jpg') }}" /><div class="overlay link"></div></a></li>
                 <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image08.jpg') }}" /><div class="overlay link"></div></a></li>
             	<li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image04.jpg') }}" /><div class="overlay link"></div></a></li>
                 <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image01.jpg') }}" /><div class="overlay link"></div></a></li>
                 <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image10.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image11.jpg') }}" /><div class="overlay link"></div></a></li>
-            </ul>
+                <li><a title="" href="{{ path('presentacion')}}"><img alt="" src="{{ asset('images/lista/image02.jpg') }}" /><div class="overlay link"></div></a></li>
+            </ul>#}
         </div>
-        <hr />
+        <hr/>
     </div>
     <div id="footercont" class="clearfix">
         <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>

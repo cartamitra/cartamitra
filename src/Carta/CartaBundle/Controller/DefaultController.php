@@ -27,11 +27,25 @@ class DefaultController extends Controller
          );
     }
     
-    public function platosAction() {
-         return $this->render('CartaCartaBundle:Default:platos.html.twig');
+    public function platosAction($id) {
+         
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('CartaCartaBundle:Plato')->findByTipo($id);
+        
+        return $this->render(
+                 'CartaCartaBundle:Default:platos.html.twig', 
+                 array('entities' => $entities)
+        );
     }
     
-    public function presentacionAction() {
-         return $this->render('CartaCartaBundle:Default:presentacion.html.twig');
+    public function presentacionAction($id) {
+         $em = $this->getDoctrine()->getManager();
+
+         $entities = $em->getRepository('CartaCartaBundle:Plato')->findOneByid($id);
+        
+         return $this->render('CartaCartaBundle:Default:presentacion.html.twig', 
+                 array('entities' => $entities)
+         );
     }
 }

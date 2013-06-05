@@ -8,9 +8,9 @@
     
 <div id="fixedtop" class="clearfix">
 	<div id="headercont" class="clearfix">
-    	<div id="headerleft">
+            <div id="headerleft">
         	<a title="" href="#"><img alt="" src="{{ asset('images/logo-example.jpg') }}" /></a>
-        </div>
+            </div>
     	<div id="headerright">
             <div class="menu">
                 <ul>
@@ -33,10 +33,9 @@
         <div id="portfoliocont" class="clearfix">
             <ul>
                 {% for entity in entities %}
-                    {% set foo = 'images/lista/image0' ~ '.jpg' %}
+                    {% set foo = 'images/lista/image0' ~ loop.index ~'.jpg' %}
                     <li><a title="" href="{{ path('platos', { 'id': entity.id })}}">
-                            <img alt="{{ entity.tipo }}" src="{{ asset('images/lista/image02.jpg') }}" />
-                            
+                            <img alt="{{ entity.tipo }}" src="{{ asset(foo) }}" />
                             <div class="overlay link"></div>
                         </a>
                     </li>
@@ -49,20 +48,6 @@
         <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>
     </div>
 </div>
-    
-        {#
-            Codigo que habia en el lugar del for
-            <ul>
-            	<li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image01.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image02.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image03.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image04.jpg') }}" /><div class="overlay link"></div></a></li>
-            	<li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image05.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image06.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image08.jpg') }}" /><div class="overlay link"></div></a></li>
-                <li><a title="" href="{{ path('platos')}}"><img alt="" src="{{ asset('images/lista/image09.jpg') }}" /><div class="overlay link"></div></a></li>
-            </ul>
-        #}
 
 {%endblock%}
     

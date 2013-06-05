@@ -35,5 +35,5 @@ platos:
   defaults: { _controller: CartaCartaBundle:Default:platos, id: 1 }
 
 presentacion:
-  pattern: /presentacion
-  defaults: { _controller: CartaCartaBundle:Default:presentacion }
+  pattern: /presentacion/{id}
+  defaults: { _controller: CartaCartaBundle:Default:presentacion, id: 1 }
