@@ -41,7 +41,13 @@ class Plato
      * @ORM\Column(name="tipo_id", type="integer")
      */
     private $tipoId;
-
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="precio", type="float")
+     */
+    private $precio;
 
     /**
      * Get id
@@ -120,6 +126,29 @@ class Plato
     public function getTipoId()
     {
         return $this->tipoId;
+    }
+    
+     /**
+     * Set fotoId
+     *
+     * @param integer $fotoId
+     * @return Plato
+     */
+    public function setprecio($precio)
+    {
+        $this->precio = $precio;
+    
+        return $this;
+    }
+
+    /**
+     * Get fotoId
+     *
+     * @return integer 
+     */
+    public function getprecio()
+    {
+        return $this->precio;
     }
 
     /**

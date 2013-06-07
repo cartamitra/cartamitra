@@ -28,13 +28,17 @@
 					<strong class="subHeading">{{entities.nombre}}</strong>
 					<div class="columns">
 						<div class="halfa">
-							<div class="imgHolder alignLeft"><img src="{{ asset('images/portfolio-1t.jpg') }}" alt="image" /></div>
+							<div class="imgHolder alignLeft"><img src="{{ asset(entities2.url) }}" alt="image" /></div>
 						</div>
 						<div class="half"><h3>{{entities.nombre}}</h3>
 						  	<div class="halftext">
 						  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
-                                                                <p><button class="boton gris" type="submit">Añadir</button></p>  
+                                                                <h3>{{entities.precio}} €</h3>
+                                                                <p>
+                                                                    <button class="boton gris" type="submit" >Añadir</button>
+                                                                    <button class="boton gris" type="submit" >Volver</button>
+                                                                </p>  
 							</div>
 						</div>
 					</div>
