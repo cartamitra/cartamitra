@@ -10,13 +10,11 @@ class ComandasType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-       
-        
         $builder
-            ->add('plato', 'entity', array( 'class' => 'CartaCartaBundle:Plato', 'property' => 'Nombre',))
             ->add('cantidad')
-            ->add('fecha','datetime', array('data' => new \DateTime()))
-            ->add('preciototal')
+            ->add('fecha')
+            ->add('plato','entity', array( 'class' => 'CartaCartaBundle:Plato', 'property' => 'Nombre',))
+            ->add('cliente','entity', array( 'class' => 'CartaCartaBundle:Cliente', 'property' => 'tipoCliente',))
         ;
     }
 

@@ -37,3 +37,7 @@ platos:
 presentacion:
   pattern: /presentacion/{id}
   defaults: { _controller: CartaCartaBundle:Default:presentacion, id: 1 }
+
+comanda:
+  pattern: /comanda/{plato}
+  defaults: { _controller: CartaCartaBundle:Default:comandas }

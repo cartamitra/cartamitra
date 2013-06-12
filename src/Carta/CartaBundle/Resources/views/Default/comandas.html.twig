@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/stylemio2.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block body -%}
+    
+<div id="fixedtop" class="clearfix">
+	<div id="headercont" class="clearfix">
+            <div id="headerleft">
+        	<a title="" href="#"><img alt="" src="{{ asset('images/logo-example.jpg') }}" /></a>
+            </div>
+    	<div id="headerright">
+            <div class="menu">
+                <ul>
+                    <li class="active"><a title="" href="{{ path('principal')}}">Inicio</a></li>
+                    <li><a title="" href="">Comanda</a></li>
+                    <li><a title="" href="">Pedir</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="maincont" class="clearfix">
+    {# Bloque principal #}
+    <div id="main">
+    	<h1>Carta Mitra</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac ornare sapien. Suspendisse suscipit molestie enim non egestas. Proin ac dictum enim. Nunc et diam in orci cursus tincidunt. Pellentesque elementum tortor arcu, id faucibus nisi. In non tellus ultricies leo eleifend placerat. Proin tincidunt mattis consequat.</p>
+    	<hr />
+
+        <div id="portfoliocont" class="clearfix">
+            <ul>
+                {% for entity in entities %}
+                    {% set fotos = 'images/lista/image0' ~ loop.index ~'.jpg' %}
+                    <li><a title="" href="{{ path('platos', { 'id': entity.id })}}">
+                            <img alt="{{ entity.tipo }}" src="{{ asset(fotos) }}" />
+                            <div class="overlay link"></div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr />
+    </div>
+    <div id="footercont" class="clearfix">
+        <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>
+    </div>
+</div>
+
+{%endblock%}
+    

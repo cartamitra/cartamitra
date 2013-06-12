@@ -172,7 +172,7 @@ a:hover { color: #FFF; }
 	
 		#maincont #main p { margin: 0 0 20px 0; }
 		#maincont #main h1, #maincont #main h2, #maincont #main h3, #maincont #main h4, #maincont #main h5 { margin: 0 0 20px 0; color: #FFF; font-weight: normal; font-family: "Archivo Narrow", Arial, Helvetica, sans-serif; }
-		#maincont #main h1 { font-size: 30px; line-height: 30px; }
+		#maincont #main h1 { text-align: center; font-size: 50px; line-height: 60px; }
 		#maincont #main h2 { font-size: 28px; line-height: 28px; }
 		#maincont #main h3 { font-size: 26px; line-height: 26px; }
 		#maincont #main h4 { font-size: 24px; line-height: 24px; }

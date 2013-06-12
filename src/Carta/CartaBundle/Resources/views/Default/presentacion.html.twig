@@ -36,7 +36,7 @@
                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
                              <h3>{{eplato.precio}} €</h3>
                              <p>
-                                <a  href="{{ path('platos', { 'id': eplato.tipoid })}}" class="boton gris" type="submit" >Añadir</a>
+                                <a  href="{{ path('comanda', { 'plato': eplato.id })}}" class="boton gris" type="submit" >Añadir</a>
                                 <a  href="{{ path('platos', { 'id': eplato.tipoid })}}" class="boton gris" type="submit" >Volver</a>
                              </p>  
 			</div>

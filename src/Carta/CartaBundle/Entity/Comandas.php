@@ -23,14 +23,14 @@ class Comandas
 
     /**
      * @var integer
-     *
+     * 
      * @ORM\Column(name="plato_id", type="integer")
      */
     private $platoId;
 
     /**
      * @var float
-     *
+     * 
      * @ORM\Column(name="cantidad", type="float")
      */
     private $cantidad;
@@ -43,12 +43,11 @@ class Comandas
     private $fecha;
 
     /**
-     * @var integer
+     * @var float
      *
-     * @ORM\Column(name="cliente_id", type="integer")
+     * @ORM\Column(name="preciototal", type="float")
      */
-    private $clienteId;
-
+    private $preciototal;
 
     /**
      * Get id
@@ -58,6 +57,12 @@ class Comandas
     public function getId()
     {
         return $this->id;
+    }
+     public function setId($Id)
+    {
+        $this->Id = $Id;
+    
+        return $this;
     }
 
     /**
@@ -128,58 +133,30 @@ class Comandas
     {
         return $this->fecha;
     }
-
-    /**
-     * Set clienteId
+    
+     /**
+     * Set preciototal
      *
-     * @param integer $clienteId
+     * @param float $preciototal
      * @return Comandas
      */
-    public function setClienteId($clienteId)
+    public function setpreciototal($preciototal)
     {
-        $this->clienteId = $clienteId;
+        $this->preciototal = $preciototal;
     
         return $this;
     }
 
     /**
-     * Get clienteId
+     * Get preciototal
      *
-     * @return integer 
+     * @return float 
      */
-    public function getClienteId()
+    public function getpreciototal()
     {
-        return $this->clienteId;
+        return $this->preciototal;
     }
-
-     /**
-     * @ORM\ManyToOne(targetEntity="Plato")
-     * @ORM\JoinColumn(name="plato_id", referencedColumnName="id")
-     * @return integer
-     **/
-    private $plato;
-    public function setPlato(\Carta\CartaBundle\Entity\Plato $plato)
-    {
-        $this->plato = $plato;
-    }
-
-    public function getPlato()
-    {
-        return $this->plato;
-    }
-
-    /**
-     * @ORM\OneToOne(targetEntity="Cliente")
-     * @ORM\JoinColumn(name="cliente_id", referencedColumnName="id")
-     **/
-    private $cliente;
-    public function setCliente(\Carta\CartaBundle\Entity\Cliente $cliente)
-    {
-        $this->cliente = $cliente;
-    }
-
-    public function getCliente()
-    {
-        return $this->cliente;
-    }
+    
+    
+     
 }

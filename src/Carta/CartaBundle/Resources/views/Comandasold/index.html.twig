@@ -10,7 +10,7 @@
                 <th>Platoid</th>
                 <th>Cantidad</th>
                 <th>Fecha</th>
-                <th>Preciototal</th>
+                <th>Clienteid</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,7 +21,7 @@
                 <td>{{ entity.platoId }}</td>
                 <td>{{ entity.cantidad }}</td>
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.preciototal }}</td>
+                <td>{{ entity.clienteId }}</td>
                 <td>
                 <ul>
                     <li>
