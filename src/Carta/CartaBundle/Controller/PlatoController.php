@@ -29,9 +29,15 @@ class PlatoController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('CartaCartaBundle:Plato')->findAll();
+        
+        foreach ($entities as $ar ){
+            $etipo = $em->getRepository('CartaCartaBundle:Tipo')->findOneByid($ar->gettipoid());
+            $tiponombre[] = $etipo->gettipo();
+        }
 
         return array(
             'entities' => $entities,
+            'tiponombre' => $tiponombre
         );
     }
 

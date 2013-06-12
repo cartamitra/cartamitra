@@ -1,9 +1,17 @@
 {% extends '::base.html.twig' %}
-
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/stylemio.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
 {% block body -%}
     <h1>Plato</h1>
-
-    <table class="record_properties">
+        <li>    
+    </a>
+            <a href="{{ path('plato_new') }}">
+            Crear uno nuevo
+    </a>
+        </li>
+    <table class="record_properties" border="1">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -21,6 +29,10 @@
                 <th>Tipoid</th>
                 <td>{{ entity.tipoId }}</td>
             </tr>
+            <tr>
+                <th>Precio</th>
+                <td>{{ entity.precio }}</td>
+            </tr>
         </tbody>
     </table>
 
@@ -28,7 +40,6 @@
     <li>
         <a href="{{ path('plato') }}">
             Back to the list
-        </a>
     </li>
     <li>
         <a href="{{ path('plato_edit', { 'id': entity.id }) }}">

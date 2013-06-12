@@ -11,49 +11,53 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     
-  
-    
-    
-    public function indexAction()
-    {
+    public function indexAction(){
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('CartaCartaBundle:Tipo')->findAll();
-
         
-         return $this->render(
+        return $this->render(
                  'CartaCartaBundle:Default:index.html.twig', 
                  array('entities' => $entities) 
-         );
+        );
     }
     
     public function platosAction($id) {
          
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('CartaCartaBundle:Plato')->findByTipo($id);
         
-        return $this->render(
-                 'CartaCartaBundle:Default:platos.html.twig', 
-                 array('entities' => $entities)
+        $eplato = $em->getRepository('CartaCartaBundle:Plato')->findByTipo($id);
+        
+        //$query = $em->createQuery(
+        //         'select f.url from CartaCartaBundle:Foto f where f.id in (select p.fotoId from CartaCartaBundle:Plato p where p.tipoId = :id)'
+        //         )->setParameter('id', $id);
+        // echo $fotos = $query->getResult();
+        
+        foreach ($eplato as $ar ){
+            $efoto = $em->getRepository('CartaCartaBundle:Foto')->findOneByid($ar->getfotoid());
+            $fotourl[] = $efoto->geturl();
+        }
+        
+        
+        return $this->render('CartaCartaBundle:Default:platos.html.twig', 
+                       array('eplato' => $eplato,
+                            'fotourl' => $fotourl)
         );
     }
     
     public function presentacionAction($id) {
+        
          $em = $this->getDoctrine()->getManager();
          
-         $entidadplato = new \Carta\CartaBundle\Entity\Plato;
+         $eplato = $em->getRepository('CartaCartaBundle:Plato')->findOneByid($id);
          
-         $entities = $em->getRepository('CartaCartaBundle:Plato')->findOneByid($id);
+         $idfoto = $eplato->getFotoId();
          
-         $entidadplato = $entities;
-         $idfoto = $entidadplato->getFotoId();
-         
-         $entities2 = $em->getRepository('CartaCartaBundle:Foto')->findOneByid($idfoto);
+         $efoto = $em->getRepository('CartaCartaBundle:Foto')->findOneByid($idfoto);
          
          return $this->render('CartaCartaBundle:Default:presentacion.html.twig', 
-                 array('entities' => $entities,
-                       'entities2' => $entities2)
+                 array('eplato' => $eplato,
+                       'efoto' => $efoto)
          );
          
     }

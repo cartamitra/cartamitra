@@ -13,8 +13,8 @@
     	<div id="headerright">
             <div class="menu">
                 <ul>
-                   <li class="active"><a title="" href="{{ path('principal')}}">Inicio</a></li>
-                    <li><a title="" href="{{ path('platos')}}">Menu</a></li>
+                    <li><a title="" href="{{ path('principal')}}">Inicio</a></li>
+                    <li><a title="" href="{{ path('platos', { 'id': eplato.tipoid })}}">Platos</a></li>
                     <li><a title="" href="">Comanda</a></li>
                     <li><a title="" href="">Pedir</a></li>
                 </ul>
@@ -24,25 +24,25 @@
 </div>
 
 <div id="maincont" class="clearfix">
-				<div class="center">
-					<strong class="subHeading">{{entities.nombre}}</strong>
-					<div class="columns">
-						<div class="halfa">
-							<div class="imgHolder alignLeft"><img src="{{ asset(entities2.url) }}" alt="image" /></div>
-						</div>
-						<div class="half"><h3>{{entities.nombre}}</h3>
-						  	<div class="halftext">
-						  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
-                                                                <h3>{{entities.precio}} €</h3>
-                                                                <p>
-                                                                    <button class="boton gris" type="submit" >Añadir</button>
-                                                                    <button class="boton gris" type="submit" >Volver</button>
-                                                                </p>  
-							</div>
-						</div>
-					</div>
-				</div>
+	<div class="center">
+            <strong class="subHeading">{{eplato.nombre}}</strong>
+		<div class="columns">
+                    <div class="halfa">
+			<div class="imgHolder alignLeft"><img src="{{ asset(efoto.url) }}" alt="image" /></div>
+                    </div>
+                    <div class="half"><h3>{{eplato.nombre}}</h3>
+			<div class="halftext">
+                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
+                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
+                             <h3>{{eplato.precio}} €</h3>
+                             <p>
+                                <a  href="{{ path('platos', { 'id': eplato.tipoid })}}" class="boton gris" type="submit" >Añadir</a>
+                                <a  href="{{ path('platos', { 'id': eplato.tipoid })}}" class="boton gris" type="submit" >Volver</a>
+                             </p>  
+			</div>
+                   </div>
+            </div>
+	</div>
     <div id="footercont" class="clearfix">
         <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>
     </div>
