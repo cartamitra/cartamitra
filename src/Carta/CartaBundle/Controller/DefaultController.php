@@ -51,7 +51,7 @@ class DefaultController extends Controller
     }
     
     public function presentacionAction($id) {
-        
+         
          $em = $this->getDoctrine()->getManager();
          
          $eplato = $em->getRepository('CartaCartaBundle:Plato')->findOneByid($id);
@@ -67,13 +67,15 @@ class DefaultController extends Controller
          
     }
     
-    public function comandasAction($plato, $comandarecivida = null){
+    public function comandasAction($plato, $mesa = "01"){
         
         $em = $this->getDoctrine()->getManager();
         
         $eplato = $em->getRepository('CartaCartaBundle:Plato')->findOneByid($plato);
         $efoto = $em->getRepository('CartaCartaBundle:Foto')->findOneByid($eplato->getFotoId());
         $data = new \DateTime();
+        $identificadorcomanda = $mesa . date('dmYHi');
+        /*
         
         if ($comandarecivida!=null){
             $ecomanda = $em->getRepository('CartaCartaBundle:Comanda')->findByid($comandarecivida);
@@ -96,13 +98,27 @@ class DefaultController extends Controller
             $comanda->setCantidad(1);
             $comanda->setFecha($data);
             $comanda->setPrecioTotal(0);
-        }
+        }*/
+        
+        $comanda  = new Comandas();
+        $comanda->setPlatoId($eplato->getId());
+        $comanda->setCantidad(1);
+        $comanda->setFecha($data);
+        $comanda->setPrecioTotal($eplato->getPrecio());
+        $comanda->setcomanda($identificadorcomanda);
         
         $em->persist($comanda);
         $em->flush();
         
         return $this->render('CartaCartaBundle:Default:presentacion.html.twig', 
                 array('eplato' => $eplato,'efoto' => $efoto));
+         
+    }
+    
+    public function fincomandaAction(){
+        
+       
+        return $this->render('CartaCartaBundle:Default:fincomanda.html.twig');
          
     }
 }

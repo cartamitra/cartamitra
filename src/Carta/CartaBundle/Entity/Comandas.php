@@ -48,6 +48,13 @@ class Comandas
      * @ORM\Column(name="preciototal", type="float")
      */
     private $preciototal;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="comanda", type="integer")
+     */
+    private $comanda;
 
     /**
      * Get id
@@ -155,6 +162,29 @@ class Comandas
     public function getpreciototal()
     {
         return $this->preciototal;
+    }
+    
+    /**
+     * Set comanda
+     *
+     * @param integer $preciototal
+     * @return Comandas
+     */
+    public function setcomanda($comanda)
+    {
+        $this->comanda = $comanda;
+    
+        return $this;
+    }
+
+    /**
+     * Get comanda
+     *
+     * @return integer 
+     */
+    public function getcomanda()
+    {
+        return $this->comanda;
     }
     
     

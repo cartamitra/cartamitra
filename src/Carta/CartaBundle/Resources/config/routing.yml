@@ -41,3 +41,7 @@ presentacion:
 comanda:
   pattern: /comanda/{plato}
   defaults: { _controller: CartaCartaBundle:Default:comandas }
+  
+fincomanda:
+  pattern: /fincomanda/
+  defaults: { _controller: CartaCartaBundle:Default:fincomanda }

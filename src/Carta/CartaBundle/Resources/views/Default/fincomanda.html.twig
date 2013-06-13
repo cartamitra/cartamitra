@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/trecolum.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block body -%}
+    
+ <div id="fixedtop" class="clearfix">
+	<div id="headercont" class="clearfix">
+    	<div id="headerleft">
+        	<a title="" href="#"><img alt="" src="{{ asset('images/logo-example.jpg') }}" /></a>
+        </div>
+    	<div id="headerright">
+            <div class="menu">
+                <ul>
+                    <li><a title="" href="{{ path('principal')}}">Inicio</a></li>
+                    <li><a title="" href="{{ path('platos')}}">Platos</a></li>
+                    <li><a title="" href="{{ path('fincomanda')}}">Comanda</a></li>
+                    <li><a title="" href="">Pedir</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+   
+
+{#<div id="threeColumnLayout" class="row">#}
+    <div class="center">
+        <h1>COMANDA</h1>
+        <div class="columns">
+            <div class="oneThird">
+                <div class="imgHolder alignLeft"><img src="{{ asset('images/logo-example.jpg') }}" alt="image" /></div>
+        
+            </div>
+            <div class="oneThird">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc.</p>
+                
+            </div>
+            <div class="oneThird">
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
+            </div>
+        </div>
+    </div>
+</div>
+ </div>
+ <div id="maincont" class="clearfix">   
+ <div id="footercont" class="clearfix">
+        <p>Carta Mitra &copy; 2013 - Cabra Cordoba</p>
+    </div>
+     </div>
+
+
+{%endblock%}
