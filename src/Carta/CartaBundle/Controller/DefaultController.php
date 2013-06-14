@@ -2,23 +2,68 @@
 
 namespace Carta\CartaBundle\Controller;
 
-
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Carta\CartaBundle\Entity\Comandas;
-use Carta\CartaBundle\Form\ComandasType;
-
+use Carta\CartaBundle\Entity\mesa;
+use Carta\CartaBundle\Form\mesasType;
 
 
 class DefaultController extends Controller
 {
     
-    public function indexAction(){
-        $em = $this->getDoctrine()->getManager();
+    public function indexAction(Request $request){
+        
+        $entity  = new mesa();
+        $form = $this->createFormBuilder($entity)
+                ->add('mesa', 'entity', array( 'class' => 'CartaCartaBundle:mesa', 'property' => 'mesa',))
+                ->getForm();
+        
+        
+        
+        if($request->getMethod() == 'POST')
+        {       
+                echo $cache = $request->getContent();
+                $datos = explode("%", $cache) ;
+                $cadena = $datos[2];
+                $cadena = substr($cadena,3 ,2);
+                
+                if($cadena[1] == "&")
+                {
+                    $cadena = substr($cadena,0 ,1);
+                    $numero = (int)$cadena - 1;
+                    $cadena = (string)$numero;
+                    $cadena = "0".$cadena;
+                }else{
+                    $numero = (int)$cadena - 1;
+                    $cadena = (string)$numero;
+                }
+                
+                if($cadena == "9"){
+                    $cadena = "0".$cadena;
+                }
+                $identificadorcomanda =  $cadena.date('dmYHi');
+                return $this->redirect($this->generateUrl('principal', array('idmesa' => $identificadorcomanda)));            
+                
+        
+        }
 
+        return $this->render('CartaCartaBundle:Default:mesa.html.twig', array(
+            
+            'form'   => $form->createView()
+        ));
+        
+       
+    }
+    
+    public function principalAction(){
+        
+        $em = $this->getDoctrine()->getManager();
+        
         $entities = $em->getRepository('CartaCartaBundle:Tipo')->findAll();
         
         return $this->render(
-                 'CartaCartaBundle:Default:index.html.twig', 
+                 'CartaCartaBundle:Default:principal.html.twig', 
                  array('entities' => $entities) 
         );
     }

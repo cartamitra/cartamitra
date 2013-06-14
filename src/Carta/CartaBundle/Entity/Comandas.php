@@ -50,9 +50,9 @@ class Comandas
     private $preciototal;
     
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="comanda", type="integer")
+     * @ORM\Column(name="comanda", type="string", length=15)
      */
     private $comanda;
 
@@ -167,7 +167,7 @@ class Comandas
     /**
      * Set comanda
      *
-     * @param integer $preciototal
+     * @param string $preciototal
      * @return Comandas
      */
     public function setcomanda($comanda)
@@ -180,7 +180,7 @@ class Comandas
     /**
      * Get comanda
      *
-     * @return integer 
+     * @return string
      */
     public function getcomanda()
     {

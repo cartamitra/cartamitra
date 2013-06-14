@@ -13,30 +13,29 @@
         </div>
     	<div id="headerright">
             <div class="menu">
-                <ul>
-                    <li><a title="" href="{{ path('principal')}}">Inicio</a></li>
-                    <li><a title="" href="{{ path('platos')}}">Platos</a></li>
-                    <li><a title="" href="{{ path('fincomanda')}}">Comanda</a></li>
-                    <li><a title="" href="">Pedir</a></li>
-                </ul>
             </div>
         </div>
     </div>
 </div>
    
 
-{#<div id="threeColumnLayout" class="row">#}
+
     <div class="center">
-        <h1>COMANDA</h1>
+        <h1>SELECCIONAR MESA</h1>
         <div class="columns">
             <div class="oneone">
-                <div class="imgHolder alignLeft"><img src="{{ asset('images/5.jpg') }}" alt="image" /></div>
+                <div class="imgHolder alignLeft"><img src="{{ asset('images/logo-example.jpg') }}" alt="image" /></div>
             </div>
             <div class="oneThird">
-                <p>Nombre del plato</p>
+                <form action="{{ path('index') }}" method="post" {{ form_enctype(form) }}>
+                    {{ form_widget(form) }}
+                        <p>
+                            <button type="submit">Create</button>
+                        </p>
+                </form>
             </div>
             <div class="onetow">
-                <p>Cantidad: </p>
+                <p></p>
             </div>
         </div>
     </div>

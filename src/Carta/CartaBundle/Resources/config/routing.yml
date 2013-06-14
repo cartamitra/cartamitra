@@ -26,10 +26,18 @@ cliente:
     resource: "@CartaCartaBundle/Controller/ClienteController.php"
     type:     annotation
     
-principal:
-    pattern: /principal
-    defaults: { _controller: CartaCartaBundle:Default:index }
+mesa:
+    resource: "@CartaCartaBundle/Controller/mesaController.php"
+    type:     annotation
     
+principal:
+    pattern: /principal/
+    defaults: { _controller: CartaCartaBundle:Default:principal }
+    
+index:
+  pattern: /index
+  defaults: { _controller: CartaCartaBundle:Default:index }
+  
 platos:
   pattern: /platos/{id}
   defaults: { _controller: CartaCartaBundle:Default:platos, id: 1 }
